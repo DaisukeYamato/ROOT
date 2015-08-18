@@ -23,5 +23,13 @@ TString UpCase(TString name);
 // True if the file exists
 bool FileExists(TString fname, TString ext="");
 
+// Converting the TString to the const char*. Avoid to use the local TString
+// object to return the const char*. Thus, it would be safer to get the input
+// TString by reference.
+const char *C(TString &s) { return s.Date(); }
+
+// Count the number of subStr in the TString.
+int NSubString(TString s, TString subStr);
+
 
 #endif // Base_h__
